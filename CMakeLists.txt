@@ -90,7 +90,7 @@ if(EMSCRIPTEN)
 endif()
 
 # TODO: Add " OR ANDROID OR IOS" to this
-if(EMSCRIPTEN OR UBUNTU_TOUCH)
+if(EMSCRIPTEN OR UBUNTU_TOUCH OR LINUX_MOBILE)
   option(REMOVE_QUIT_BUTTON "Remove the option to quit the game (useful on mobile devices)" ON)
 else()
   option(REMOVE_QUIT_BUTTON "Remove the option to quit the game (useful on mobile devices)" OFF)
@@ -152,7 +152,7 @@ endif(WIN32)
 option(UBUNTU_TOUCH "Compile the project for an Ubuntu Touch target" OFF)
 
 # Mobile builds
-if (UBUNTU_TOUCH)
+if (UBUNTU_TOUCH OR LINUX_MOBILE)
   option(ENABLE_TOUCHSCREEN_SUPPORT "Enable on-screen controls and event detection for touchscreen devices" ON)
 else()
   option(ENABLE_TOUCHSCREEN_SUPPORT "Enable on-screen controls and event detection for touchscreen devices" OFF)

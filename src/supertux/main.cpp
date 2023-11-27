@@ -348,7 +348,7 @@ PhysfsSubsystem::~PhysfsSubsystem()
 SDLSubsystem::SDLSubsystem()
 {
   Uint32 flags = SDL_INIT_TIMER | SDL_INIT_VIDEO;
-#ifndef UBUNTU_TOUCH
+#if !defined(UBUNTU_TOUCH) && !defined(LINUX_MOBILE)
   flags |= SDL_INIT_JOYSTICK | SDL_INIT_GAMECONTROLLER;
 #endif
   if (SDL_Init(flags) < 0)

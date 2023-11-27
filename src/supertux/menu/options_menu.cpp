@@ -408,7 +408,7 @@ OptionsMenu::OptionsMenu(bool complete) :
   add_submenu(_("Setup Keyboard"), MenuStorage::KEYBOARD_MENU)
     .set_help(_("Configure key-action mappings"));
 
-#ifndef UBUNTU_TOUCH
+#if !defined(UBUNTU_TOUCH) && !defined(LINUX_MOBILE)
   add_submenu(_("Setup Joystick"), MenuStorage::JOYSTICK_MENU)
     .set_help(_("Configure joystick control-action mappings"));
 #endif
